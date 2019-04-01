@@ -1,0 +1,33 @@
+Tecnologías descartadas
+-Lambda, no aplica por el hecho de que se necesita
+precargar modelos de IA, Lambda tiene tiempos de caída
+ya que depende de levantar instancias de EC2
+-Fargate, no aplica por el hecho que funciona similar
+a Lambda, tiene tiempos de caída. No permite configurar,
+ni optimizar los ambientes que crea.
+-ECS, depende directamente de instancias EC2, es similar
+a usar instancias, básicamente consiste en crear instancias
+en una instancia de EC2
+
+Beneficios
+-El cluster es reutilizable para cualquier tipo de aplicación
+-Permite crear distintos ambientes de desarrollo y producción
+independientes
+-Permite realizar monitoreo
+-Automatiza procesos de despliegue, disminuyendo tiempos de 
+desarrollo a través de implementar DevOps y CI/CD
+-Los recursos del cluster se modifican según la demanda de recursos
+de los bots
+
+Recomendaciones
+-Se recomienda el uso de instancias m5.large y t2.medium combinadas
+para tener el mejor rendimiento en el cluster
+-Usar MySQL como serverless o como container en el cluster
+
+Reemplazos
+-Utilizar MySQL en containers ya que no se utiliza siempre
+-Usar el broker como container, siempre con RabbitMQ
+
+Impacto en tiempos
+-Modificar archivos de despliegues en Terraform
+-Pruebas para determinar los valores óptimos de las configuraciones
